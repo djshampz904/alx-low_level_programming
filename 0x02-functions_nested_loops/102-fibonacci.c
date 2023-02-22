@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * man - Entry point
+ * main - Entry point
  *
  * Return: 0 Always Success
  */
@@ -16,7 +16,7 @@ int main(void)
 	while (next < 50)
 	{
 		next = b + c;
-		if (!(next > 50))
+		if ((next > 50))
 			break;
 		printf("%d, ", next);
 		b = c;
