@@ -25,5 +25,8 @@ int add(int, int);
 
 void print_to_98(int n);
 
+<<<<<<< HEAD
 void print_times_table(int n);
+=======
+>>>>>>> 1cc7227eaa3bdbc58677f61993b84989ea8172fa
 #endif

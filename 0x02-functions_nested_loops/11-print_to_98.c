@@ -12,6 +12,10 @@
 void print_to_98(int n)
 {
 	int a;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1cc7227eaa3bdbc58677f61993b84989ea8172fa
 	if (n < 98)
 		for (a = n; a <= 98; a++)
 		{
