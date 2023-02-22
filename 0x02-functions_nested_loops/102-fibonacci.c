@@ -8,19 +8,20 @@
 
 int main(void)
 {
-	int counter, b, c, next;
+	int counter, b, c;
+	unsigned int next;
 
 	b = 1;
 	c = 2;
 	counter = 0;
 	printf("%d, %d, ", b, c);
-	while (counter <= 50)
+	while (counter < 48)
 	{
 		next = b + c;
-		if ((counter < 50))
-			printf("%d, ", next);
+		if ((counter < 47))
+			printf("%u, ", next);
 		else
-			printf("%d\n", next);
+			printf("%u\n", next);
 		b = c;
 		c = next;
 		counter++;
