@@ -18,14 +18,13 @@ int main(void)
 	while (counter < 48)
 	{
 		next = b + c;
-		if ((counter < 47))
-			printf("%u, ", next);
-		else
-			printf("%u\n", next);
+		printf("%u, ", next);
 		b = c;
 		c = next;
 		counter++;
 	}
+	next = b + c;
+	printf("%u\n", next);
 	putchar('\n');
 	return (0);
 }
