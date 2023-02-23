@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_diaganol - print diagonal to terminal
+ * print_diagonal - print diagonal to terminal
  *
  * @n: integer to check
  * Return: noothing
