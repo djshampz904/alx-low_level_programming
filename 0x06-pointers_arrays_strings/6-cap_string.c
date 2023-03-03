@@ -9,15 +9,16 @@
 
 char *cap_string(char *s)
 {
-	int i, found = 1;
+	int i, x, found = 1;
+	char seperators[] = {' ', '\n', '\t', '?', '"', '(', ')', '.', ',',
+				'{', '}', '!', ';',};
 
 	for (i = 0; s[i] != '\0'; i++)
-		if (s[i] == ' ' || s[i] == '\n' || s[i] == '\t' || s[i] == '?' ||
-			s[i] == '"' || s[i] == '(' || s[i] == '.' || s[i] == ')'
-			|| s[i] == '}' || s[i] == '{' || s[i] == '!' || s[i] == ';'
-			|| s[i] == ',')
-			found = 0;
-		else if (found == 0 && s[i] >= 97 && s[i] <= 122)
+	{
+		for (x = 0; seperators[x] != '\0'; x++)
+			if (s[i] == seperators[x])
+				found = 0;
+		if (found == 0 && s[i] >= 97 && s[i] <= 122)
 		{
 			s[i] = s[i] - 32;
 			found = 1;
@@ -26,5 +27,6 @@ char *cap_string(char *s)
 			(s[i] <= 57 && s[i] >= 48)) &&
 			found == 0)
 			found = 1;
+	}
 	return (s);
 }
