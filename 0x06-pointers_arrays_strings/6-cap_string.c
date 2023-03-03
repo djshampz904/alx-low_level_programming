@@ -23,8 +23,8 @@ char *cap_string(char *s)
 			s[i] = s[i] - 32;
 			found = 1;
 		}
-		else if (((s[i] <= 89 && s[i] >= 65) ||
-			(s[i] <= 57 && s[i] >= 48)) &&
+		else if (((s[i] <= 'Z' && s[i] >= 'A') ||
+			(s[i] <= '9' && s[i] >= '0')) &&
 			found == 0)
 			found = 1;
 	}
