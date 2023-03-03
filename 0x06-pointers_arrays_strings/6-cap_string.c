@@ -9,24 +9,21 @@
 
 char *cap_string(char *s)
 {
-	int i, x, found = 1;
+	int i, x, cap = 32;
 	char seperators[] = {' ', '\n', '\t', '?', '"', '(', ')', '.', ',',
 				'{', '}', '!', ';',};
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (x = 0; seperators[x] != '\0'; x++)
+		if (s[i] >= 'a' && s[i] <= 'z')
+			s[i] = s[i] - cap;
+		cap = 0;
+		for (x = 0; x <= 12; x++)
 			if (s[i] == seperators[x])
-				found = 0;
-		if (found == 0 && s[i] >= 97 && s[i] <= 122)
-		{
-			s[i] = s[i] - 32;
-			found = 1;
-		}
-		else if (((s[i] <= 'Z' && s[i] >= 'A') ||
-			(s[i] <= '9' && s[i] >= '0')) &&
-			found == 0)
-			found = 1;
+			{
+				x = 12;
+				cap = 32;
+			}
 	}
 	return (s);
 }
