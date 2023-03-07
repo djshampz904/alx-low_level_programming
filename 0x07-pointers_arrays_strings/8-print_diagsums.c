@@ -10,7 +10,11 @@ void print_diagsums(int *a, int size)
 	int i;
 	int diagO = 0;
 	int diagT = 0;
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 21f67efb0df861da2ad9336f3267ed9b799da365
 	for (i = 0; i < size; i++)
 	{
 		diagO += a[(i * size) + i];
