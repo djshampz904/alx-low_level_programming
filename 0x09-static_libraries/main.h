@@ -124,62 +124,58 @@ char *_strncpy(char *dest, char *src, int n);
 int _strcmp(char *s1, char *s2);
 
 /**
+ * _memset - fills memory with a constant byte.
+ * @s: pointer to memory area to fill.
+ * @b: constant byte to fill memory area with.
+ * @n: number of bytes to fill.
+ * Return: pointer to memory area @s.
+ */
 
-_memset - fills memory with a constant byte.
-@s: pointer to memory area to fill.
-@b: constant byte to fill memory area with.
-@n: number of bytes to fill.
-Return: pointer to memory area @s.
-*/
 char *_memset(char *s, char b, unsigned int n);
 
 /**
+ * _memcpy - copies memory area.
+ * @dest: pointer to destination memory area.
+ * @src: pointer to source memory area.
+ * @n: number of bytes to copy.
+ * Return: pointer to destination memory area @dest.
+ */
 
-_memcpy - copies memory area.
-@dest: pointer to destination memory area.
-@src: pointer to source memory area.
-@n: number of bytes to copy.
-Return: pointer to destination memory area @dest.
-*/
 char *_memcpy(char *dest, char *src, unsigned int n);
 
 /**
-
-_strchr - locates a character in a string.
-@s: pointer to string to search in.
-@c: character to search for.
-Return: pointer to the first occurrence of character @c in string @s,
-*/
+ * _strchr - locates a character in a string.
+ * @s: pointer to string to search in.
+ * @c: character to search for.
+ * Return: pointer to the first occurrence of character @c in string @s,
+ */
 
 char *_strchr(char *s, char c);
 
 /**
-
-_strspn - gets the length of a prefix substring.
-@s: pointer to string to search in.
-@accept: pointer to string containing characters to match.
-Return: number of bytes in the initial segment of @s which consist
-*/
+ * _strspn - gets the length of a prefix substring
+ * @s: pointer to string to search in.
+ * @accept: pointer to string containing characters to match.
+ * Return: number of bytes in the initial segment of @s which consist
+ */
 
 unsigned int _strspn(char *s, char *accept);
 
 /**
-
-_strpbrk - searches a string for any of a set of bytes.
-@s: pointer to string to search in.
-@accept: pointer to string containing characters to match.
-Return: pointer to the first occurrence in @s of any of the bytes
-*/
+ * _strpbrk - searches a string for any of a set of bytes.
+ * @s: pointer to string to search in.
+ * @accept: pointer to string containing characters to match.
+ * Return: pointer to the first occurrence in @s of any of the bytes
+ */
 
 char *_strpbrk(char *s, char *accept);
 
 /**
-
-_strstr - locates a substring.
-@haystack: pointer to string to search in.
-@needle: pointer to substring to search for.
-Return: pointer to the first occurrence of substring @needle in
-*/
+ * _strstr - locates a substring.
+ * @haystack: pointer to string to search in.
+ * @needle: pointer to substring to search for.
+ * Return: pointer to the first occurrence of substring @needle in
+ */
 
 char *_strstr(char *haystack, char *needle);
 
