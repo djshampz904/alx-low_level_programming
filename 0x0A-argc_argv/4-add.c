@@ -13,11 +13,11 @@
 int main(int argc, char *argv[])
 {
 	int j, i, total = 0;
-	char *arg;
 
 	for (i = 1; i < argc; i++)
 	{
-		*arg = argv[i];
+		char *arg = argv[i];
+
 		for (j = 0; arg[j] != '\0'; j++)
 		{
 			if (!isdigit(arg[j]))
