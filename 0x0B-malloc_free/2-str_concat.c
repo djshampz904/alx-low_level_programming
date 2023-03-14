@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include "2-strlen.c"
 
 /**
  * str_concat - join two strings together
@@ -11,10 +12,12 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	unsigned int i, j = 0;
+	unsigned int i, j, len1, len2;
 	char *ptr;
 
-	ptr = (char *) malloc(sizeof(s1) + sizeof(s2));
+	len1 = _strlen(s1);
+	len2 = _strlen(s2);
+	ptr = (char *) malloc(sizeof(char) * len1 + len2 + 1);
 	if (ptr == NULL)
 		return (0);
 	for (i = 0; s1[i] != '\0'; i++)
