@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# get current directory
+CURRENT_DIR=$(pwd)
+
+# loop through all files and directories recursively
+find "$CURRENT_DIR" -type f -o -type d | while read file; do
+
+  # get file name
+  FILE_NAME=$(basename "$file")
+
+  # create commit message
+  COMMIT_MESSAGE="changes to $FILE_NAME"
+
+  # amend commit message
+  git add "$file"
+  git commit --amend -m "$COMMIT_MESSAGE"
+
+done
+
