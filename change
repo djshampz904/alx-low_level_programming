@@ -4,7 +4,11 @@
 CURRENT_DIR=$(pwd)
 
 # loop through all files and directories recursively
+<<<<<<< HEAD
 find "$CURRENT_DIR" -type f -o -type d | while read file; do
+=======
+find "$CURRENT_DIR" -type f | while read file; do
+>>>>>>> 862a2a2d2cc7888af137fa4c6cafb01baf65fc4b
 
   # get file name
   FILE_NAME=$(basename "$file")
