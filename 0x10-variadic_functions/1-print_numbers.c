@@ -5,7 +5,7 @@
 /**
  * print_numbers - print numbers passed seperated by custom separator
  *
- * @separator: character to print between the numbers
+ * @seperator: character to print between the numbers
  * @n: number on arguments passed
  * Return: nothing
  */
