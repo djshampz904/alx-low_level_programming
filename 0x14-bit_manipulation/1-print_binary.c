@@ -9,18 +9,21 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned int mask;
-	int i, leading_zeroes;
+	unsigned long int i;
+       	int leading_zeroes;
 
 	leading_zeroes = 1;
-	for (i = 31; i >= 0; i--)
+	i = 1;
+	i <<= ((sizeof(i) * 8) - 1);
+	
+	while (i > 0)
 	{
-		mask = 1u << i;
-		if ((n & mask) || !leading_zeroes)
+		if ((i & n) || !leading_zeroes)
 		{
 			leading_zeroes = 0;
-			_putchar((n & mask) ? '1' : '0');
+			_putchar((n & i) ? '1' : '0');
 		}
+		i = i >> 1;
 	}
 	if (leading_zeroes)
 		_putchar('0');
