@@ -10,12 +10,12 @@
 void print_binary(unsigned long int n)
 {
 	unsigned long int i;
-       	int leading_zeroes;
+	int leading_zeroes;
 
 	leading_zeroes = 1;
 	i = 1;
 	i <<= ((sizeof(i) * 8) - 1);
-	
+
 	while (i > 0)
 	{
 		if ((i & n) || !leading_zeroes)
