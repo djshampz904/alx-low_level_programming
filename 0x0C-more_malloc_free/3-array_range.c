@@ -1,29 +1,34 @@
-#include "main.h"
+#include "holberton.h"
+#include <stdio.h>
 #include <stdlib.h>
-
 /**
- * array_range - allocates smemory for an array
- *
- * @min: minimum
- * @max: size of elements in bytess
- * Return: nothing
+ * array_range - range of arrays
+ * @min: min of arrange
+ * @max: max of arrays
+ * Return: int value
  */
-
 int *array_range(int min, int max)
 {
-	unsigned int i, size;
-	int *ptr;
+	int i;
+	int *t;
+	int len;
 
 	if (min > max)
 		return (NULL);
-	size = max - min + 1;
-	ptr = malloc(size);
-	if (ptr == NULL)
+	len = 0;
+	for (i = min; i <= max; i++)
+		len++;
+
+	t = malloc(sizeof(int) * len);
+	if (t == NULL)
 		return (NULL);
-	for (i = 0; min <= max; i++)
+
+	i = 0;
+	while (min <= max)
 	{
-		ptr[i] = min;
+		t[i] = min;
+		i++;
 		min++;
 	}
-	return (ptr);
+	return (t);
 }
