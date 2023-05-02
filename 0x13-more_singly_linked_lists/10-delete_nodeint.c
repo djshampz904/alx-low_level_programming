@@ -4,14 +4,14 @@
  * delete_nodeint_at_index - deletes a node
  * @head: pointer to head pointer
  * @index: index to remove
- * Return : 1 or -1
+ * Return: 1 or -1
  */
 
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 	listint_t *current_node, *previous_node;
 	unsigned int current_index = 0;
-	
+
 	current_node = *head;
 	if (*head == NULL)
 		return (-1);
