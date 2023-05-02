@@ -1,45 +1,44 @@
 #include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
-#include "2-strlen.c"
-
 /**
- * string_nconcat - concatinates two strings
- *
- * @s1: string one to check
- * @s2: string two to use
- * @n: integer to use to allocate memory
- * Return: character
+ * string_nconcat - concats strings
+ * @s1: string one
+ * @s2: string two
+ * @n: n amount of bytes
+ * Return: return a char val
  */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i, j = 0, len1, len2;
-	char *ptr;
+	unsigned int i, len1, len2;
+	char *s;
 
-	if (s1 == NULL)
-		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-	len1 = _strlen(s1);
-	len2 = _strlen(s2);
+	if (s1 == NULL)
+		s1 = "";
+
+	len1 = 0;
+	len2 = 0;
+	while (s2[len2] != '\0')
+		len2++;
+	while (s1[len1] != '\0')
+		len1++;
 
 	if (n >= len2)
-		;
-	else
-		len2 = len2 - (len2 - n);
-	ptr = malloc(sizeof(char) * (len1 + len2 + 1));
-	if (ptr == NULL)
-		return (0);
+		n = len2;
+
+	s = malloc(sizeof(char) * n + len1 + 1);
+	if (s == NULL)
+		return (NULL);
+
 	for (i = 0; i < len1; i++)
-	{
-		ptr[j] = s1[i];
-		j++;
-	}
-	for (i = 0; i < len2; i++)
-	{
-		ptr[j] = s2[i];
-		j++;
-	}
-	ptr[j++] = '\0';
-	return (ptr);
+		s[i] = s1[i];
+
+	for (i = 0; i < n; i++)
+		s[i + len1] = s2[i];
+
+	s[i + len1] = '\0';
+
+	return (s);
 }
