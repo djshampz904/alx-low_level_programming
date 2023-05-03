@@ -1,38 +1,42 @@
-#include "lists.h"
-#include <stddef.h>
-#include <string.h>
 #include <stdlib.h>
-#include "2-add_node.c"
+#include <stdio.h>
+#include <string.h>
+#include "lists.h"
 /**
- * add_node_end - adds node at the end of the list
- *
- * @head: pointer to the pointer of the head
- * @str: string to insert into list
- * Return: list added
+ * add_node_end - adds node at end
+ * @head: head
+ * @str: string to add
+ * Return: address
  */
-
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *newNode, *current;
+	int i = 0;
+	list_t *new, *f;
 
-	current = *head;
-
+	while (str[i])
+		i++;
+	new = malloc(sizeof(list_t));
+	if (new == NULL)
+		return (NULL);
+	new->str = strdup(str);
+	new->len = i;
+	new->next = NULL;
+	if (strdup(str) == NULL)
+	{
+		free(new);
+		return (NULL);
+	}
 	if (*head == NULL)
 	{
-		add_node(head, str);
-		return (*head);
+		*head = new;
+		return (new);
 	}
-	newNode = malloc(sizeof(list_t));
-	if (newNode == NULL)
-		return (NULL);
-
-	newNode->str = strdup(str);
-	newNode->len = strlen(str);
-	newNode->next = NULL;
-
-	while (current->next != NULL)
-		current = current->next;
-
-	current->next = newNode;
-	return (newNode);
+	else
+	{
+		f = *head;
+		while (f->next != NULL)
+			f = f->next;
+		f->next = new;
+		return (new);
+	}
 }
