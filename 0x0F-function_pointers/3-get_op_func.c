@@ -1,12 +1,10 @@
 #include "3-calc.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
- * get_op_func - used to get the operation
+ * get_op_func - selects function
+ * @s: char
  *
- * @s: pointer to the character
- * Return: integer
+ * Return: pointer
  */
 
 int (*get_op_func(char *s))(int, int)
@@ -19,15 +17,14 @@ int (*get_op_func(char *s))(int, int)
 		{"%", op_mod},
 		{NULL, NULL}
 	};
-	int i;
+	int a = 0;
 
-	i = 0;
-	while (ops[i].f != NULL)
+	while (a < 10)
 	{
-		if (*s == *(ops[i].op) && s[1] == '\0')
-			return (ops[i].f);
-		i++;
+		if (s[0] == ops->op[a])
+			break;
+		a++;
 	}
-	printf("Error\n");
-	exit(99);
+
+	return (ops[a / 2].f);
 }

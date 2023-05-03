@@ -1,26 +1,30 @@
-#include <stdio.h>
 #include "function_pointers.h"
 
 /**
- * int_index - finds number in an array
+ * int_index - search int
+ * @array: input array
+ * @size: size of array
+ * @cmp: pointer
  *
- * @array: array to loop
- * @size: size of the array
- * @cmp: function to pass
- *
- * Return: integer
+ * Return: n/a
  */
 
 int int_index(int *array, int size, int (*cmp)(int))
 {
-	int i;
+	int a;
 
-	if (array == NULL || size <= 0 || cmp == NULL)
-		return (-1);
-	for (i = 0; i < size; i++)
+	if (array && cmp)
 	{
-		if (cmp(array[i]) != 0)
-			return (i);
+		if (size <= 0)
+			return (-1);
+
+		for (a = 0; a < size; a++)
+		{
+			if (cmp(array[a]))
+				return (a);
+		}
+
 	}
+
 	return (-1);
 }
