@@ -17,5 +17,7 @@ typedef struct dlistint_s
 size_t print_dlistint(const dlistint_t *h);
 /*function to list number of elements in a linked list*/
 size_t dlistint_len(const dlistint_t *h);
+/*function to add a new node at the beginning of a dlistint_t list*/
+dlistint_t *add_dnodeint(dlistint_t **head, const int n);
 
 #endif
