@@ -3,10 +3,10 @@
 /**
  * main - Entry point
  *
- * Return: Always
+ * Return: Always 
  */
 int main(void)
 {
-    print_school();
-    return (EXIT_SUCCESS);
+	print_school();
+	return (EXIT_SUCCESS);
 }
